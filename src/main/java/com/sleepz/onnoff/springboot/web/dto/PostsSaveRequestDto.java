@@ -1,4 +1,5 @@
 package com.sleepz.onnoff.springboot.web.dto;
+
 import com.sleepz.onnoff.springboot.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;

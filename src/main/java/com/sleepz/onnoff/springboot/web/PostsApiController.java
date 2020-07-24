@@ -1,16 +1,20 @@
 package com.sleepz.onnoff.springboot.web;
 
 import com.sleepz.onnoff.springboot.service.PostsService;
+import com.sleepz.onnoff.springboot.web.dto.PostsListResponseDto;
 import com.sleepz.onnoff.springboot.web.dto.PostsResponseDto;
 import com.sleepz.onnoff.springboot.web.dto.PostsSaveRequestDto;
 import com.sleepz.onnoff.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
-//import org.springframework.web.bind.annotation.DeleteMapping;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-//import java.util.List;
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -38,9 +42,9 @@ public class PostsApiController {
     public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
     }
-//
-//    @GetMapping("/api/v1/posts/list")
-//    public List<PostsListResponseDto> findAll() {
-//        return postsService.findAllDesc();
-//    }
+
+    @GetMapping("/api/v1/posts/list")
+    public List<PostsListResponseDto> findAll() {
+        return postsService.findAllDesc();
+    }
 }
